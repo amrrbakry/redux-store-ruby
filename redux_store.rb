@@ -2,10 +2,10 @@ module Redux
   class ReduxStore
     attr_reader :state, :listeners
 
-    def initialize(reducer)
+    def initialize(reducer, initial_state = nil)
       @reducer = reducer
       @listeners = []
-      @state = nil
+      @state = initial_state
       dispatch({})
     end
 
