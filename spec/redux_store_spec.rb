@@ -47,13 +47,11 @@ RSpec.describe Redux::ReduxStore do
       subject.subscribe(listener)
       expect(subject.listeners.size).to eq(1)
     end
-  end
 
-  context '#unsubscribe' do
-    it 'removes a listener' do
-      subject.subscribe(listener)
+    it 'returns an unsubscribe lambda function' do
+      unsubscribe = subject.subscribe(listener)
       expect(subject.listeners.size).to eq(1)
-      subject.unsubscribe(listener)
+      unsubscribe.call
       expect(subject.listeners.size).to eq(0)
     end
   end

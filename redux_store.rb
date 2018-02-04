@@ -27,10 +27,7 @@ module Redux
 
     def subscribe(listener)
       @listeners.push(listener) unless @listeners.include?(listener)
-    end
-
-    def unsubscribe(listener)
-      @listeners.delete(listener) if @listeners.include?(listener)
+      -> { @listeners.delete(listener) } if @listeners.include?(listener)
     end
   end
 end
