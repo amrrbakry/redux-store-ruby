@@ -46,4 +46,4 @@ app_store.dispatch(type: 'increment')
 app_store.dispatch(type: 'add', todo: 'buy milk')
 app_store.dispatch(type: 'increment')
 app_store.dispatch(type: 'add_restaurant', restaurant: { title: 'res' })
-p app_store.state
+p app_store.state # {:counter=>2, :todos=>["buy milk"], :restaurants=>[{:title=>"res"}]}
