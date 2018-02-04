@@ -1,6 +1,6 @@
 module Redux
   class ReduxStore
-    attr_reader :state
+    attr_reader :state, :listeners
 
     def initialize(reducer)
       @reducer = reducer
